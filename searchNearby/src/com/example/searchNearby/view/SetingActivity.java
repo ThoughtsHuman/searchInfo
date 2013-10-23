@@ -36,8 +36,7 @@ public class SetingActivity extends Activity {
         backImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SetingActivity.this,MainActivity.class);
-                startActivity(intent);
+             finish();
             }
         });
     }

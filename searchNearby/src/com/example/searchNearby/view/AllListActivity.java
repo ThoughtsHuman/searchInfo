@@ -10,7 +10,7 @@ import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.example.searchNearby.EntityConstant;
+import com.example.searchNearby.Constants;
 import com.example.searchNearby.R;
 import com.example.searchNearby.util.Tools;
 
@@ -32,11 +32,11 @@ public class AllListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.itemactivity);
+        setContentView(R.layout.secondactivity);
         listView = (ListView) findViewById(R.id.itemListView);
         Intent index = getIntent();
-       int mainSelected = index.getIntExtra(EntityConstant.MAIN_ACTIVITY_LISTVIEW_SELECTED,-1);
-        data = Tools.getAdapterAllDataWithIndex(mainSelected,EntityConstant.THRID_DATA);
+       int mainSelected = index.getIntExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED,-1);
+        data = Tools.getAdapterAllDataWithIndex(mainSelected, Constants.THRID_DATA);
         listView.setAdapter(new CommonAdapter(data));
     }
 
@@ -73,14 +73,7 @@ public class AllListActivity extends Activity {
 //            ImageView itemImageView = (ImageView) convertView.findViewById(R.id.nextItemIamgeView);
 
             itemTextView.setText(itemData.get("itemTextView").toString());
-//            itemImageView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent intent = new Intent(MainActivity.this,SecondActivity.class);
-//                    intent.putExtra(EntityConstant.MAIN_ACTIVITY_LISTVIEW_SELECTED,selected);
-//                    startActivity(intent);
-//                }
-//            });
+
             return convertView;
         }
     }

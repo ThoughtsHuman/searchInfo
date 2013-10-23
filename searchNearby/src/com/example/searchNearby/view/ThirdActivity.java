@@ -8,11 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import com.example.searchNearby.EntityConstant;
+import android.widget.*;
+import com.example.searchNearby.Constants;
 import com.example.searchNearby.R;
 import com.example.searchNearby.util.Tools;
 
@@ -29,19 +26,60 @@ import java.util.Map;
  */
 public class ThirdActivity extends Activity {
     private ListView itemListView;
-    private int mainListSelected, secondSelect;
+    private int mainSelected, secondSelected;
+    private TextView titleTextview;
+    private ImageButton titleLeftImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.thirdactivity);
-        itemListView = (ListView) findViewById(R.id.itemListView);
 
+        itemListView = (ListView) findViewById(R.id.itemListView);
+        titleTextview = (TextView) findViewById(R.id.titleTextView);
+        titleLeftImageView = (ImageButton) findViewById(R.id.titleLeftImageView);
         Intent data = getIntent();
-        mainListSelected = data.getIntExtra(EntityConstant.MAIN_ACTIVITY_LISTVIEW_SELECTED, -1);
-        secondSelect = data.getIntExtra("secondIndex", -1);
-        itemListView.setAdapter(new CommonAdapter(Tools.getAdapterDataWithIndex(mainListSelected, secondSelect, EntityConstant.THRID_DATA)));
+        mainSelected = data.getIntExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, -1);
+        secondSelected = data.getIntExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED, -1);
+
+        Log.d("TAG",mainSelected+","+secondSelected+"*************************************");
+
+        initTitle_clickEvent();
+
+
+        itemListView.setAdapter(new CommonAdapter(Tools.getAdapterDataWithIndex(mainSelected, secondSelected, Constants.THRID_DATA)));
+        itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                gotoDetail(position);
+            }
+        });
+    }
+
+
+    private void gotoDetail(int position){
+        Intent intent = new Intent(this,ItemlActivity.class);
+        intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED,mainSelected);
+        intent.putExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED,secondSelected);
+        intent.putExtra(Constants.THRID_ACTIVITY_LISTVIEW_SELECTED,position);
+        startActivity(intent);
+        finish();
+    }
+
+    private void initTitle_clickEvent() {
+        titleTextview.setText(Constants.SECOND_DATA[mainSelected][secondSelected]);
+        titleLeftImageView.setImageResource(R.drawable.ic_nav_back);
+
+        titleLeftImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ThirdActivity.this, SecondActivity.class);
+                intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED,mainSelected);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private class CommonAdapter extends BaseAdapter {
@@ -75,8 +113,6 @@ public class ThirdActivity extends Activity {
 
             Map<String, Object> itemData = (Map<String, Object>) getItem(position);
             TextView itemTextView = (TextView) convertView.findViewById(R.id.itemTextView);
-            ImageView itemImageView = (ImageView) convertView.findViewById(R.id.nextItemIamgeView);
-
             itemTextView.setText(itemData.get("itemTextView").toString());
             return convertView;
         }

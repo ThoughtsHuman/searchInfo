@@ -10,13 +10,13 @@
             android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:layout_weight="1"
-              android:text="定位中，请稍等..."
               android:textSize="20px"
               android:gravity="center_vertical"
               android:textColor="#000000"></TextView>
-    <ImageView android:id="@+id/loactionImageView"
+    <ImageButton android:id="@+id/loactionImageView"
             android:layout_width="30dp"
                android:layout_height="30dp"
                android:layout_gravity="center_vertical"
-               android:background="@drawable/ic_localbar_location"></ImageView>
+               android:src="@drawable/ic_localbar_location"
+               android:background="@drawable/button_bg"></ImageButton>
 </LinearLayout>

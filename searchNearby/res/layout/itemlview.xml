@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        android:background="#FFFFFF">
+          <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="45dp"
+                  android:background="@drawable/bg_title_bar"
+                  android:padding="5dp">
+              <ImageButton android:id="@+id/detailBackButton"
+                      android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:layout_gravity="center_vertical"
+                      android:src="@drawable/ic_nav_back"
+                      android:background="@drawable/button_bg"></ImageButton>
+              <TextView android:id="@+id/detailTitle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:textColor="#FFFFFF"
+                      android:layout_weight="1"
+                      android:textSize="30px"
+                      android:layout_marginLeft="30dp"
+                        android:gravity="center"></TextView>
+              <ImageButton   android:id="@+id/detailRefresh"
+                      android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_gravity="center_vertical"
+                           android:src="@drawable/ic_refresh"
+                           android:background="@drawable/button_bg"></ImageButton>
+              <ImageButton android:id="@+id/detailListOrMapButton"
+                      android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:layout_gravity="center_vertical"
+                           android:src="@drawable/ic_action_list"
+                           android:background="@drawable/button_bg"></ImageButton>
+                  </LinearLayout>
+    <TextView android:id="@+id/detailLimit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_tab_top"
+            android:textSize="20px"
+            android:text="范围:3000米"
+            android:textColor="#000000"
+            android:gravity="center"></TextView>
+    <LinearLayout android:id="@+id/detailListOrMapView"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            </LinearLayout>
+</LinearLayout>

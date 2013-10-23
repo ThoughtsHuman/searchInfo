@@ -1,11 +1,27 @@
 package com.example.searchNearby.util;
 
 
+import android.content.Context;
+import android.util.Log;
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Tools {
-    public static boolean isEmpty = true;
 
     public static ArrayList<HashMap<String, Object>> getAdapterData(String[] temp) {
         ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
@@ -21,9 +37,9 @@ public class Tools {
         ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
         for (int i = 0; i < temp[index].length; i++) {
             HashMap<String, Object> item = new HashMap<String, Object>();
-            if(temp[index][i]!=null){
-            item.put("itemTextView", temp[index][i]);
-            data.add(item);
+            if (temp[index][i] != null) {
+                item.put("itemTextView", temp[index][i]);
+                data.add(item);
             }
         }
         return data;
@@ -56,11 +72,4 @@ public class Tools {
         return data;
     }
 
-    public static boolean isEmpty() {
-        return isEmpty;
-    }
-
-    public static void setEmpty(boolean empty) {
-        isEmpty = empty;
-    }
 }

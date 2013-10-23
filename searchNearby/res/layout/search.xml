@@ -20,7 +20,7 @@
                   android:layout_gravity="center_vertical"
                   android:layout_height="match_parent"
                   android:layout_weight="1"
-                  android:layout_margin="8dp"
+                  android:layout_margin="5dp"
                   android:background="@drawable/abs__textfield_search_selected_holo_dark"
                  ></EditText>
         <ImageView  android:id="@+id/search_ImageView"

@@ -5,10 +5,11 @@
               android:layout_height="45dp"
               android:padding="5dp"
               android:background="@drawable/bg_title_bar">
-    <ImageView android:id="@+id/titleLeftImageView"
+    <ImageButton android:id="@+id/titleLeftImageView"
             android:layout_width="30dp"
                android:layout_height="30dp"
-               android:layout_gravity="center_vertical"/>
+               android:layout_gravity="center_vertical"
+            android:background="@drawable/button_bg"/>
     <TextView  android:id="@+id/titleTextView"
             android:textSize="30px"
             android:layout_weight="1"
@@ -16,8 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="#FFFFFF"/>
-    <ImageView  android:id="@+id/titleRightImageView"
+    <ImageButton  android:id="@+id/titleRightImageView"
             android:layout_width="30dp"
                android:layout_height="30dp"
+               android:background="@drawable/button_bg"
                android:layout_gravity="center_vertical"/>
 </LinearLayout>
