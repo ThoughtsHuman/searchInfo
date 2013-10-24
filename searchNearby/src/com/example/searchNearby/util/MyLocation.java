@@ -9,6 +9,7 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.platform.comapi.basestruct.GeoPoint;
+import com.example.searchNearby.Constants;
 
 public class MyLocation {
 
@@ -25,7 +26,7 @@ public class MyLocation {
         option.setOpenGps(true);
 
         LocationClient locationClient = new LocationClient(context);
-        locationClient.setAK("95d37ccd2d9733fc28f3383056188b01");
+        locationClient.setAK(Constants.KEY);
         locationClient.setLocOption(option);
 
         locationClient.registerLocationListener(new BDLocationListener() {

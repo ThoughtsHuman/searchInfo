@@ -45,8 +45,12 @@ public class SecondActivity extends Activity{
         itemListView.setAdapter(new CommonAdapter(Tools.getAdapterDataWithIndex(mainSelected, Constants.SECOND_DATA)));
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Intent intent = new Intent(SecondActivity.this,ItemlActivity.class);
+                intent.putExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED,position);
+                intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED,mainSelected);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -84,7 +88,7 @@ public class SecondActivity extends Activity{
         }
 
         @Override
-        public View getView( int position, View convertView, ViewGroup viewGroup) {
+        public View getView(final int position, View convertView, ViewGroup viewGroup) {
             secondSelected = position;
             if (convertView == null) {
                 LayoutInflater layoutInflater = getLayoutInflater();
@@ -99,10 +103,8 @@ public class SecondActivity extends Activity{
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
-                    intent.putExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED,secondSelected);
+                    intent.putExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED,position);
                     intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED,mainSelected);
-                    Log.d("TAG", mainSelected + "," + secondSelected + "*************************************");
-
                     startActivity(intent);
                     finish();
                 }

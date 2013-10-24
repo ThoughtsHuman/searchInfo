@@ -27,8 +27,6 @@ public class MainActivity extends Activity implements MyLocation.MyLocationListe
     private ImageButton titleLeftImageButton, titleRightImageButton;
     private ImageButton locationImageButton;
     MyLocation myLocation = new MyLocation();
-//    private LocationClient locationClient = null;
-    private int mainSelected;
     private String addrsStr;
 
     @Override
@@ -45,15 +43,6 @@ public class MainActivity extends Activity implements MyLocation.MyLocationListe
         titleRightImageButton = (ImageButton) findViewById(R.id.titleRightImageView);
         titleTextview = (TextView) findViewById(R.id.titleTextView);
 
-//        LocationClientOption option = new LocationClientOption();
-//        option.setAddrType("all");
-//        option.setOpenGps(true);//打开gps
-//        option.setCoorType("bd09ll");     //设置坐标类型
-//        locationClient = new LocationClient(this);
-//        locationClient.setLocOption(option);
-//        locationClient.setAK("95d37ccd2d9733fc28f3383056188b01");
-//        locationClient.registerLocationListener(myListener);
-//        locationClient.start();
           myLocation.getMyLocation(MainActivity.this,this);
 
         locationImageButton.setOnClickListener(new View.OnClickListener() {
@@ -71,15 +60,20 @@ public class MainActivity extends Activity implements MyLocation.MyLocationListe
         mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(MainActivity.this, ItemlActivity.class);
-                Log.d("AAAAAAAAAAAAAAAA",""+position);
-                intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, position);
-                startActivity(intent);
+                gotoDetail(position);
+                Log.d("TAG","--------detailActivity-----------"+position);
             }
         });
 
     }
 
+
+    private void gotoDetail(int position){
+        Intent intent = new Intent(MainActivity.this, ItemlActivity.class);
+        Log.d("AAAAAAAAAAAAAAAA",""+position);
+        intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, position);
+        startActivity(intent);
+    }
 
     private void startLocation() {
         myLocation.getMyLocation(MainActivity.this,this);
@@ -138,6 +132,9 @@ public class MainActivity extends Activity implements MyLocation.MyLocationListe
 
         @Override
         public View getView(final int position, View convertView, ViewGroup viewGroup) {
+                Log.d("TAG","--------itemActivity-----------"+position);
+
+
             if (convertView == null) {
                 LayoutInflater layoutInflater = getLayoutInflater();
                 convertView = layoutInflater.inflate(R.layout.listviewitem, viewGroup, false);
@@ -154,6 +151,7 @@ public class MainActivity extends Activity implements MyLocation.MyLocationListe
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                     intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, position);
                     startActivity(intent);
+
                 }
             });
             return convertView;
@@ -179,39 +177,4 @@ public class MainActivity extends Activity implements MyLocation.MyLocationListe
             System.exit(0);
         }
     }
-
-
-//    private class MyAsynTask extends AsyncTask {
-//        ProgressDialog dialog = new ProgressDialog(MainActivity.this);
-//
-//        @Override
-//        protected void onPreExecute() {
-//            dialog.setTitle("请稍等...");
-//            dialog.setMessage("定位中...");
-//            dialog.show();
-//            super.onPreExecute();
-//        }
-//
-//        @Override
-//        protected Object doInBackground(Object... objects) {
-//            if (locationClient != null && locationClient.isStarted()) {
-//
-//                locationClient.requestLocation();
-//            }
-//            return null;  //To change body of implemented methods use File | Settings | File Templates.
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Object o) {
-//            dialog.dismiss();
-//
-//            if (addrsStr != null) {
-//                locationTextView.setText(addrsStr);
-//            } else {
-//                locationTextView.setText("定位失败！");
-//            }
-//            super.onPostExecute(o);    //To change body of overridden methods use File | Settings | File Templates.
-//        }
-//
-//    }
 }

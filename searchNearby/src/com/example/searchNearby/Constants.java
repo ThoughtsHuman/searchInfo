@@ -3,7 +3,10 @@ package com.example.searchNearby;
 public class Constants {
     public static final int DATA_ERROR = 0;
     public static final int SERVERDATA_ERROR = 1;
-    public static final String ACCESS_TOKEN = "access_token=2.00CNBWKEBthqxB20eacc078c2HH6BD";
+    public  static  final int SUCCESS = -1;
+    public static  final  String JSON_URL  = "https://api.weibo.com/2/location/pois/search/by_geo.json?access_token=2.00CNBWKEBthqxB20eacc078c2HH6BD";
+    public static  final String KEY = "95d37ccd2d9733fc28f3383056188b01";
+//    public static final String ACCESS_TOKEN = "access_token=2.00CNBWKEBthqxB20eacc078c2HH6BD";
     public static final String MAIN_ACTIVITY_LISTVIEW_SELECTED = "mainSelected";
     public static final String SECOND_ACTIVITY_LISTVIEW_SELECTED = "secondSelected";
     public static final String THRID_ACTIVITY_LISTVIEW_SELECTED = "thridSelected";

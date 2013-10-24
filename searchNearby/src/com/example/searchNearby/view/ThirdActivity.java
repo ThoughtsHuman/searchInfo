@@ -105,7 +105,7 @@ public class ThirdActivity extends Activity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup viewGroup) {
+        public View getView(final int position, View convertView, ViewGroup viewGroup) {
             if (convertView == null) {
                 LayoutInflater layoutInflater = getLayoutInflater();
                 convertView = layoutInflater.inflate(R.layout.listviewitem, viewGroup, false);

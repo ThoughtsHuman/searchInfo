@@ -15,7 +15,10 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.*;
 import com.baidu.location.BDLocation;
+import com.baidu.mapapi.map.LocationData;
+import com.baidu.mapapi.map.MapController;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.platform.comapi.basestruct.GeoPoint;
 import com.example.searchNearby.Constants;
 import com.example.searchNearby.R;
 import com.example.searchNearby.util.MyLocation;
@@ -42,17 +45,17 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class ItemlActivity extends Activity implements MyLocation.MyLocationListener {
-    private String city, coordinate, range, count, searchtype,q,jsonURL = "https://api.weibo.com/2/location/pois/search/by_geo.json?"+Constants.ACCESS_TOKEN;
+    private String city, coordinate, range, count, searchtype, q, jsonURL = Constants.JSON_URL;
     private ImageButton backButton, refresh, listOrMapButton;
     private TextView detailTitle, detailLimit;
-    private LinearLayout listLayout, linearLayout;
     private ListView itemListView;
     private MapView mapView;
+    private MapController mapController;
     private CommonAdapter adapter = null;
-    private int mainSelected,secondSelected,thridSelected;
+    private int mainSelected, secondSelected, thridSelected;
     private ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
     private MyLocation myLocation = new MyLocation();
-    private Resources res;
+
     final String[] searchLimit = {"1000", "2000", "3000", "4000", "5000"};
 
     @Override
@@ -60,31 +63,47 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.itemlview);
-        res = getResources();
-        myLocation.getMyLocation(ItemlActivity.this, this);
 
-        final LayoutInflater inflater = getLayoutInflater();
+        myLocation.getMyLocation(ItemlActivity.this, this);
 
         Intent intent = getIntent();
         mainSelected = intent.getIntExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, -1);
-        secondSelected = intent.getIntExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED,-1);
-        thridSelected = intent.getIntExtra(Constants.THRID_ACTIVITY_LISTVIEW_SELECTED,-1);
+        secondSelected = intent.getIntExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED, -1);
+        thridSelected = intent.getIntExtra(Constants.THRID_ACTIVITY_LISTVIEW_SELECTED, -1);
 
         backButton = (ImageButton) findViewById(R.id.detailBackButton);
         refresh = (ImageButton) findViewById(R.id.detailRefresh);
         detailTitle = (TextView) findViewById(R.id.detailTitle);
         detailLimit = (TextView) findViewById(R.id.detailLimit);
-        linearLayout = (LinearLayout) findViewById(R.id.detailListOrMapView);
-        listLayout = (LinearLayout) inflater.inflate(R.layout.item_listview, null).findViewById(R.id.listLayout);
-        itemListView = (ListView) listLayout.findViewById(R.id.detail_listview);
-
-        searchtype =disposeArgSearchtype();
-
+        itemListView = (ListView) findViewById(R.id.detail_listview);
         listOrMapButton = (ImageButton) findViewById(R.id.detailListOrMapButton);
+        mapView = (MapView) findViewById(R.id.detailMapView);
+        mapView.setVisibility(View.GONE);
+
+        mapView.setBuiltInZoomControls(true);
+//        //卫星图层
+//        mapView.setSatellite(true);
+//        //交通图层
+//        mapView.setTraffic(true);
+
+
+        mapController = mapView.getController();
+        //控制缩放等级
+        mapController.setZoom(14);
+
+        mapController = mapView.getController();
+
+        mapController.setCenter(new GeoPoint((int)(34.26667 * 1E6),(int)(108.95000 * 1E6)));
+        searchtype = disposeArgSearchtype();
+        jsonURL = jsonURL + "&coordinate=116.322479,39.980781&searchtype=" + searchtype;
+
+        MyAsynTask myAsynTask = new MyAsynTask();
+        myAsynTask.execute();
+
         listOrMapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeLayout(view);
+                changeView(view);
             }
         });
 
@@ -94,14 +113,7 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
                 startRefresh();
             }
         });
-//        jsonURL = jsonURL+"&coordinate="+coordinate+"&searchtype="+searchtype;
-        jsonURL = jsonURL + "&coordinate=116.322479,39.980781&q=" + searchtype;
 
-        Log.d(Constants.TAG, "-------oncreat---------" + jsonURL);
-
-        MyAsynTask myAsynTask = new MyAsynTask();
-        myAsynTask.execute();
-        linearLayout.addView(listLayout);
 
         detailLimit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,32 +121,37 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
                 setLimitText();
             }
         });
-        detailTitle.setText(Constants.FIRST_DATA[mainSelected]);
 
         backButton();
 
     }
 
-    private void changeLayout(View view) {
+    private void changeView(View view) {
         ImageButton button = (ImageButton) view;
-
-        if (button.getResources().getResourceName(R.drawable.ic_action_list).equals(res.getResourceName(R.drawable.ic_action_list))) {
+        if(mapView.getVisibility() == View.GONE){
             button.setImageResource(R.drawable.ic_action_map);
+            mapView.setVisibility(View.VISIBLE);
+            itemListView.setVisibility(View.GONE);
+        }else{
+            button.setImageResource(R.drawable.ic_action_list);
+            mapView.setVisibility(View.GONE);
+            itemListView.setVisibility(View.VISIBLE);
         }
 
     }
 
-    private String disposeArgSearchtype(){
-       String str = "";
-        if(thridSelected==-1&&secondSelected!=-1){
-           str = Constants.SECOND_DATA[mainSelected][secondSelected];
+    private String disposeArgSearchtype() {
+        String str = "";
+        if (thridSelected == -1 && secondSelected != -1) {
+            str = Constants.SECOND_DATA[mainSelected][secondSelected];
         }
-        if(thridSelected!=-1){
+        if (thridSelected != -1) {
             str = Constants.THRID_DATA[mainSelected][secondSelected][thridSelected];
         }
-        if(secondSelected == -1&&thridSelected==-1){
+        if (secondSelected == -1 && thridSelected == -1) {
             str = Constants.FIRST_DATA[mainSelected];
         }
+        detailTitle.setText(str);
         return str;
     }
 
@@ -160,27 +177,34 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
         dialog.show();
     }
 
-
     private void backButton() {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ItemlActivity.this,ThirdActivity.class);
-                intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED,mainSelected);
-                intent.putExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED,secondSelected);
+                Intent intent = null;
+                if (thridSelected != -1) {
+                    intent = new Intent(ItemlActivity.this, ThirdActivity.class);
+                    intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, mainSelected);
+                    intent.putExtra(Constants.SECOND_ACTIVITY_LISTVIEW_SELECTED, secondSelected);
+                }
+                if (secondSelected == -1) {
+                    intent = new Intent(ItemlActivity.this, MainActivity.class);
+                }
+                if (secondSelected != -1 && thridSelected == -1) {
+                    intent = new Intent(ItemlActivity.this, SecondActivity.class);
+                    intent.putExtra(Constants.MAIN_ACTIVITY_LISTVIEW_SELECTED, mainSelected);
+
+                }
+                startActivity(intent);
                 finish();
             }
         });
     }
 
-
-    @Override
     public void getLocation(BDLocation bdLocation) {
         city = bdLocation.getCity();
         coordinate = bdLocation.getLatitude() + "," + bdLocation.getLongitude();
-        Log.d(Constants.TAG, "--------------getLocation" + coordinate + "" + city);
     }
-
 
     private class MyAsynTask extends AsyncTask {
         ProgressDialog dialog = new ProgressDialog(ItemlActivity.this);
@@ -196,30 +220,30 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
         protected Object doInBackground(Object... objects) {
 
             try {
-                Log.d(Constants.TAG, "-------doInbackground---------" + jsonURL);
                 data = getJsonData(jsonURL);
-
-
             } catch (IOException e) {
                 return Constants.SERVERDATA_ERROR;
             } catch (JSONException e) {
                 return Constants.SERVERDATA_ERROR;
             }
-            return 0;
+            return Constants.SUCCESS;
         }
 
 
         @Override
         protected void onPostExecute(Object o) {
-            if ((Integer) o == Constants.SERVERDATA_ERROR) {
-                Toast.makeText(ItemlActivity.this, "服务器数据错误", 500);
+            if((Integer) o == Constants.SUCCESS){
+                dialog.dismiss();
+                adapter = new CommonAdapter(data);
+                itemListView.setAdapter(adapter);
+            }else{
+                if ((Integer) o == Constants.SERVERDATA_ERROR) {
+                    Toast.makeText(ItemlActivity.this, "服务器数据错误", 500).show();
+                }
+                if ((Integer) o == Constants.DATA_ERROR) {
+                    Toast.makeText(ItemlActivity.this, "数据错误", 500).show();
+                }
             }
-            if ((Integer) o == Constants.DATA_ERROR) {
-                Toast.makeText(ItemlActivity.this, "数据错误", 500);
-            }
-            dialog.dismiss();
-            adapter = new CommonAdapter(data);
-            itemListView.setAdapter(adapter);
             super.onPostExecute(o);
         }
     }
@@ -244,6 +268,8 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
             item.put("poiTitle", jsonObjectItem.optString("name"));
             item.put("poiAddrs", jsonObjectItem.optString("address"));
             item.put("poiDistence", jsonObjectItem.optString("distance") + "米");
+            item.put("latitude",jsonObjectItem.optDouble("x"));
+            item.put("longitude",jsonObjectItem.optDouble("y"));
             data.add(item);
         }
 
@@ -251,7 +277,6 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
 
         return data;
     }
-
 
     private class CommonAdapter extends BaseAdapter {
         private ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
