@@ -5,9 +5,11 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
+
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +17,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.*;
 import com.baidu.location.BDLocation;
-import com.baidu.mapapi.map.LocationData;
-import com.baidu.mapapi.map.MapController;
-import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.*;
 import com.baidu.platform.comapi.basestruct.GeoPoint;
 import com.example.searchNearby.Constants;
 import com.example.searchNearby.R;
 import com.example.searchNearby.util.MyLocation;
-import com.example.searchNearby.util.Tools;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -31,7 +30,6 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +48,9 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
     private TextView detailTitle, detailLimit;
     private ListView itemListView;
     private MapView mapView;
+    private View mapPopWindow;
+    private MyLocationOverlay myLocationOverlay;
+    private PoiOverlay<OverlayItem> itemItemizedOverlay;
     private MapController mapController;
     private CommonAdapter adapter = null;
     private int mainSelected, secondSelected, thridSelected;
@@ -77,25 +78,21 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
         detailLimit = (TextView) findViewById(R.id.detailLimit);
         itemListView = (ListView) findViewById(R.id.detail_listview);
         listOrMapButton = (ImageButton) findViewById(R.id.detailListOrMapButton);
+
         mapView = (MapView) findViewById(R.id.detailMapView);
-        mapView.setVisibility(View.GONE);
-
-        mapView.setBuiltInZoomControls(true);
-//        //卫星图层
-//        mapView.setSatellite(true);
-//        //交通图层
-//        mapView.setTraffic(true);
-
-
-        mapController = mapView.getController();
-        //控制缩放等级
-        mapController.setZoom(14);
-
+        mapPopWindow = getLayoutInflater().inflate(R.layout.map_pop_window, null);
+        mapPopWindow.setVisibility(View.GONE);
+        mapView.addView(mapPopWindow);
         mapController = mapView.getController();
 
-        mapController.setCenter(new GeoPoint((int)(34.26667 * 1E6),(int)(108.95000 * 1E6)));
+
+        Drawable marker = getResources().getDrawable(R.drawable.ic_loc_normal);
+        myLocationOverlay = new MyLocationOverlay(marker,mapView);
+
+        initMapView();
+
         searchtype = disposeArgSearchtype();
-        jsonURL = jsonURL + "&coordinate=116.322479,39.980781&searchtype=" + searchtype;
+        jsonURL = jsonURL + "&coordinate=108.95000,34.26667&searchtype=" + searchtype;
 
         MyAsynTask myAsynTask = new MyAsynTask();
         myAsynTask.execute();
@@ -114,7 +111,6 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
             }
         });
 
-
         detailLimit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,13 +122,97 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
 
     }
 
+    private void initOvreLayout(){
+        Drawable marker = getResources().getDrawable(R.drawable.ic_loc_normal);
+
+        itemItemizedOverlay = new PoiOverlay<OverlayItem>(marker, mapView);
+
+        for (int i = 0; i < data.size(); i++) {
+            Log.d("TAG",data.get(i).get("latitude")+","+data.get(i).get("longitude")+"size:"+data.size());
+            GeoPoint point = new GeoPoint((int)((Double)data.get(i).get("longitude") * 1E6),(int)((Double)data.get(i).get("latitude") * 1E6));
+            OverlayItem overlayItem = new OverlayItem(point, data.get(i).get("poiTitle").toString(),data.get(i).get("poiAddrs").toString());
+            itemItemizedOverlay.addItem(overlayItem);
+        }
+//        mapController.zoomToSpan();
+
+        mapView.getOverlays().add(itemItemizedOverlay);
+        mapView.refresh();
+    }
+
+    private void initMapView(){
+        //设置地图隐藏
+        mapView.setVisibility(View.GONE);
+        mapView.setBuiltInZoomControls(true);
+        //控制缩放等级
+        mapController.setZoom(14);
+        //设置中心点
+        GeoPoint point = new GeoPoint((int) (34.26667 * 1E6), (int) (108.95000 * 1E6));
+        mapController.setCenter(point);
+//        myLocationOverlay = new MyLocationOverlay(getResources().getDrawable(R.drawable.ic_loc_normal), mapView);
+//        mapView.getOverlays().add(myLocationOverlay);
+
+
+    }
+
+    class PoiOverlay<OverlayItem> extends ItemizedOverlay {
+
+        public PoiOverlay(Drawable drawable, MapView mapView) {
+            super(drawable, mapView);
+        }
+
+        @Override
+        protected boolean onTap(int i) {
+            Log.d("BaiduMapDemo", "onTap " + i);
+            com.baidu.mapapi.map.OverlayItem item = itemItemizedOverlay.getItem(i);
+            GeoPoint point = item.getPoint();
+            String title = item.getTitle();
+            String content = item.getSnippet();
+
+            TextView titleTextView = (TextView) mapPopWindow.findViewById(R.id.titleTextView);
+            TextView contentTextView = (TextView) mapPopWindow.findViewById(R.id.contentTextView);
+            titleTextView.setText(title);
+            contentTextView.setText(content);
+            contentTextView.setVisibility(View.VISIBLE);
+
+            MapView.LayoutParams layoutParam = new MapView.LayoutParams(
+                    //控件宽,继承自ViewGroup.LayoutParams
+                    MapView.LayoutParams.WRAP_CONTENT,
+                    //控件高,继承自ViewGroup.LayoutParams
+                    MapView.LayoutParams.WRAP_CONTENT,
+                    //使控件固定在某个地理位置
+                    point,
+                    0,
+                    -40,
+                    //控件对齐方式
+                    MapView.LayoutParams.BOTTOM_CENTER);
+
+            mapPopWindow.setVisibility(View.VISIBLE);
+
+            mapPopWindow.setLayoutParams(layoutParam);
+
+            mapController.animateTo(point);
+
+            return super.onTap(i);
+        }
+
+        //点击overLayout以外的事件
+        public boolean onTap(GeoPoint geoPoint, MapView mapView) {
+            Log.d("BaiduMapDemo", "onTap geoPoint " + geoPoint);
+
+            mapPopWindow.setVisibility(View.GONE);
+
+            return super.onTap(geoPoint, mapView);    //To change body of overridden methods use File | Settings | File Templates.
+        }
+    }
+
     private void changeView(View view) {
         ImageButton button = (ImageButton) view;
-        if(mapView.getVisibility() == View.GONE){
+        if (mapView.getVisibility() == View.GONE) {
             button.setImageResource(R.drawable.ic_action_map);
             mapView.setVisibility(View.VISIBLE);
             itemListView.setVisibility(View.GONE);
-        }else{
+            initOvreLayout();
+        } else {
             button.setImageResource(R.drawable.ic_action_list);
             mapView.setVisibility(View.GONE);
             itemListView.setVisibility(View.VISIBLE);
@@ -203,7 +283,9 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
 
     public void getLocation(BDLocation bdLocation) {
         city = bdLocation.getCity();
-        coordinate = bdLocation.getLatitude() + "," + bdLocation.getLongitude();
+//        GeoPoint loc = new GeoPoint((int)(bdLocation.getLatitude()*1E6),(int)(bdLocation.getLongitude()*1E6));
+//        myLocationOverlay.setMyLocation(loc);
+//        mapView.getOverlays().add(myLocationOverlay);
     }
 
     private class MyAsynTask extends AsyncTask {
@@ -232,11 +314,11 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
 
         @Override
         protected void onPostExecute(Object o) {
-            if((Integer) o == Constants.SUCCESS){
+            if ((Integer) o == Constants.SUCCESS) {
                 dialog.dismiss();
                 adapter = new CommonAdapter(data);
                 itemListView.setAdapter(adapter);
-            }else{
+            } else {
                 if ((Integer) o == Constants.SERVERDATA_ERROR) {
                     Toast.makeText(ItemlActivity.this, "服务器数据错误", 500).show();
                 }
@@ -268,12 +350,10 @@ public class ItemlActivity extends Activity implements MyLocation.MyLocationList
             item.put("poiTitle", jsonObjectItem.optString("name"));
             item.put("poiAddrs", jsonObjectItem.optString("address"));
             item.put("poiDistence", jsonObjectItem.optString("distance") + "米");
-            item.put("latitude",jsonObjectItem.optDouble("x"));
-            item.put("longitude",jsonObjectItem.optDouble("y"));
+            item.put("latitude", jsonObjectItem.optDouble("x"));
+            item.put("longitude", jsonObjectItem.optDouble("y"));
             data.add(item);
         }
-
-        Log.d("tag", "------------bbbbbbbbbbbbbbb------------" + jsonStr);
 
         return data;
     }

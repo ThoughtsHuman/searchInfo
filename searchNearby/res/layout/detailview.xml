@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:gravity="center"
+                  android:background="@drawable/bg_title_bar"
+                  android:orientation="horizontal">
+        <ImageButton android:id="@+id/Tbackbutton"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     android:src="@drawable/ic_nav_back"
+                      android:layout_marginLeft="5dp"
+                     android:background="@drawable/button_bg"/>
+        <TextView
+                android:id="@+id/map_head_Text"
+                    android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center"
+                  android:layout_weight="1"
+                  android:text="详细信息"
+                  android:textSize="20dp"
+                  android:textColor="#ffffff"/>
+        <ImageButton
+                android:id="@+id/arrowsbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_route"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/button_bg"
+                />
+    </LinearLayout>
+
+    <RadioGroup android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_tab_top"
+                android:orientation="horizontal"
+            android:id="@+id/info_radioButton">
+        <RadioButton
+                    android:id="@+id/info_walkButton"
+                    android:layout_height="50dp"
+                     android:layout_width="wrap_content"
+                     android:layout_weight="1"
+                     android:background="@drawable/radiobutton_bg"
+                     android:button="@null"
+                     android:gravity="center"
+                     android:text="步行"
+                     android:textColor="#000000"
+                     android:textSize="20dp"
+                     android:drawableLeft="@drawable/ic_byfoot"/>
+        <RadioButton
+                    android:id="@+id/info_busButton"
+                    android:layout_height="50dp"
+                     android:layout_width="wrap_content"
+                     android:layout_weight="1"
+                     android:background="@drawable/radiobutton_bg"
+                     android:button="@null"
+                     android:text="公交"
+                     android:gravity="center"
+                     android:textColor="#000000"
+                     android:textSize="20dp"/>
+        <RadioButton
+                     android:id="@+id/info_driveButton"
+                     android:layout_height="50dp"
+                     android:layout_width="wrap_content"
+                     android:layout_weight="1"
+                     android:background="@drawable/radiobutton_bg"
+                     android:button="@null"
+                     android:text="驾车"
+                     android:gravity="center"
+                     android:textColor="#000000"
+                     android:textSize="20dp"
+                     android:drawableLeft="@drawable/ic_bycar"/>
+    </RadioGroup>
+
+    <RelativeLayout android:id="@+id/particulars_RelativeLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+            >
+        <com.baidu.mapapi.map.MapView android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+        <TextView
+                  android:id="@+id/info_distance"
+                  android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:layout_alignParentTop="true"
+                  android:paddingLeft="5dp"
+                  android:background="#50000000"
+                  android:textSize="20dp"
+                  android:textColor="#ffffff"/>
+        <LinearLayout android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_alignParentBottom="true">
+            <TextView
+                    android:id="@+id/info_name"
+                      android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:background="#50000000"
+                      android:paddingTop="10dp"
+                      android:paddingLeft="5dp"
+                      android:textSize="20dp"
+                      android:textColor="#ffffff"/>
+            <TextView
+                    android:id="@+id/info_address"
+                        android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:background="#50000000"
+                      android:paddingBottom="10dp"
+                      android:paddingLeft="5dp"
+                      android:textSize="15dp"
+                      android:textColor="#ffffff"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:layout_height="44dp"
+                  android:layout_width="fill_parent"
+                  android:gravity="center_vertical"
+                  android:background="#ffffff">
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="8dp"
+                   android:src="@drawable/ic_phone"
+                />
+        <TextView
+                android:id="@+id/map_bottom_Text"
+                    android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="5dp"
+                  android:text="123456789"
+                  android:textColor="#000000"
+                  android:textSize="21dp"/>
+    </LinearLayout>
+</LinearLayout>
+

@@ -31,13 +31,16 @@ import java.util.Map;
 
 
 public class SearchActivity extends Activity {
-    private String coordinate, range, count, q, jsonURL = Constants.JSON_URL;
+    private String coordinate, range, q, jsonURL = Constants.JSON_URL;
     private ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
     private ImageView backImageView;
     private ImageButton searchButton;
     private CommonAdapter adapter = null;
     private ListView itemListView;
     private EditText editText;
+    private TextView loadMoreButton;
+    private View loadMoreView;
+    private int count = 10, visibleLastIndex = 0, visibleItemCount;   //最后的可视项索引
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,30 +52,62 @@ public class SearchActivity extends Activity {
         searchButton = (ImageButton) findViewById(R.id.search_ImageView);
         editText = (EditText) findViewById(R.id.search_editText);
 
+        final LayoutInflater inflater = getLayoutInflater();
+        loadMoreView = inflater.inflate(R.layout.loadmore, null);
+        loadMoreButton = (TextView) loadMoreView.findViewById(R.id.loadMaoreTextView);
+        itemListView.addFooterView(loadMoreView);
         jsonURL = jsonURL + "&coordinate=116.322479,39.980781";
+
+        getListLastIndex();
 
         search();
 
-        gotoDetail();
+        showResult();
 
         backView();
     }
 
-    private void gotoDetail(){
+    private void showResult() {
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               TextView textView = (TextView) view.findViewById(R.id.poiTitle);
-//                textView.getText();
-                Log.d("Tag",""+textView.getText()+"----------------------------");
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                TextView textView = (TextView) view.findViewById(R.id.poiTitle);
+                if (adapter.getCount() < 99) {
+                    //加在更多View
+                    if (position == visibleLastIndex) {
+                        count += 10;
+                        jsonURL = jsonURL + "&q=" + editText.getText().toString().trim() + "&count=" + count;
+                        MyAsynTask myAsynTask = new MyAsynTask();
+                        myAsynTask.execute();
+                        adapter.notifyDataSetChanged(); //数据集变化后,通知adapter
+                    } else {
+                        gotoDetail();
+                    }
+                }
             }
         });
     }
 
-    private void addData(){
+    private void gotoDetail(){
+//        Intent intent = new Intent(this,);
+    }
+
+    private void getListLastIndex() {
+        itemListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            public void onScrollStateChanged(AbsListView absListView, int scrollState) {
+
+            }
+
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                visibleLastIndex = firstVisibleItem + visibleItemCount - 1;
+                SearchActivity.this.visibleItemCount = visibleItemCount;
+            }
+        });
+    }
+
+    private void addData() {
         String str = editText.getText().toString();
         str = str.trim().replaceAll(" ", "");
-        Log.d("tag",str+"------------------------------");
         if (!str.equals("")) {
             jsonURL = jsonURL + "&q=" + editText.getText().toString().trim();
             MyAsynTask myAsynTask = new MyAsynTask();
@@ -80,13 +115,14 @@ public class SearchActivity extends Activity {
         } else {
             Toast.makeText(this, "请输入要搜索的内容", Toast.LENGTH_LONG).show();
         }
+        count = 0;
     }
 
     private void search() {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    addData();
+                addData();
             }
         });
     }
@@ -164,6 +200,9 @@ public class SearchActivity extends Activity {
                 HashMap<String, Object> item = new HashMap<String, Object>();
                 item.put("poiTitle", jsonObjectItem.optString("name"));
                 item.put("poiAddrs", jsonObjectItem.optString("address"));
+                item.put("latitude", jsonObjectItem.optString("y"));
+                item.put("longitude", jsonObjectItem.optString("x"));
+                item.put("tel", jsonObjectItem.optString("tel"));
                 item.put("poiDistence", jsonObjectItem.optString("distance") + "米");
                 data.add(item);
             }

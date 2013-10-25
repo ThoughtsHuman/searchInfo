@@ -19,7 +19,6 @@
         <option name="nightMode" value="notnight" />
         <option name="targetHashString" value="android-10" />
         <option name="theme" value="Theme" />
-        <option name="visible" value="false" />
       </GlobalState>
     </option>
   </component>
@@ -30,11 +29,10 @@
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1381918467946" ignored="false" />
     <file path="/main.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1381910665356" ignored="false" />
     <file path="/head.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1381905293419" ignored="false" />
-    <file path="/Dummy.txt" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382409009052" ignored="false" />
+    <file path="/Dummy.txt" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382682020344" ignored="false" />
     <file path="/bottom_laction.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382327085343" ignored="false" />
     <file path="/MainActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382538370123" ignored="false" />
     <file path="/fragment.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382624846858" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/example/searchNearby/R.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382433104680" ignored="false" />
     <file path="/start.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1381907171151" ignored="false" />
     <file path="/StartActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1381974780982" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382544868177" ignored="false" />
@@ -65,7 +63,7 @@
     <file path="/AllListActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382078556850" ignored="false" />
     <file path="/head_bar.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382328404252" ignored="false" />
     <file path="/search.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382596343499" ignored="false" />
-    <file path="/SearchActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382607774620" ignored="false" />
+    <file path="/SearchActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382688755242" ignored="false" />
     <file path="/SetingActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382402767460" ignored="false" />
     <file path="/set.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382082081096" ignored="false" />
     <file path="$USER_HOME$/Desktop/locSDK_4.0_Demo/src/com/baidu/locTest/Constants.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382169076531" ignored="false" />
@@ -77,14 +75,14 @@
     <file path="/mainActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382259594870" ignored="false" />
     <file path="$USER_HOME$/Desktop/locSDK_4.0_Demo/AndroidManifest.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382260605978" ignored="false" />
     <file path="$USER_HOME$/Desktop/locSDK_4.0_Demo/gen/com/baidu/locTest/R.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382260636745" ignored="false" />
-    <file path="/detailview.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382352747046" ignored="false" />
+    <file path="/detailview.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382689835952" ignored="false" />
     <file path="/lmititemview.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382275946380" ignored="false" />
-    <file path="/DetailActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382406843348" ignored="false" />
+    <file path="/DetailActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382689389835" ignored="false" />
     <file path="/dialogstyle.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382348941678" ignored="false" />
     <file path="/detail_listview.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382409196808" ignored="false" />
     <file path="/detail_listview_row.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382411174544" ignored="false" />
     <file path="/detai_mapview.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382411367193" ignored="false" />
-    <file path="/ItemlActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382623029524" ignored="false" />
+    <file path="/ItemlActivity.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382672609590" ignored="false" />
     <file path="/Constants.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382595757708" ignored="false" />
     <file path="/MyLocation.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382544761917" ignored="false" />
     <file path="/item_listview.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382429403805" ignored="false" />
@@ -106,6 +104,8 @@
     <file path="E:/code/BaiduMap_AndroidSDK_v2.2.0_Sample/src/baidumapsdk/demo/LocationOverlayDemo.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382624037643" ignored="false" />
     <file path="E:/code/BaiduMap_AndroidSDK_v2.2.0_Sample/src/baidumapsdk/demo/CustomRouteOverlayDemo.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382624055497" ignored="false" />
     <file path="E:/code/BaiduMap_AndroidSDK_v2.2.0_Sample/src/baidumapsdk/demo/OverlayDemo.java" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382624457593" ignored="false" />
+    <file path="/map_pop_window.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382673517437" ignored="false" />
+    <file path="/loadmore.xml" changelist="b3eecbd6-8f84-4c90-8125-e32402a19293" time="1382682272439" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,28 +169,67 @@
       <file leaf-file-name="ItemlActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/ItemlActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="79" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.0">
+            <state line="135" column="37" selection-start="5144" selection-end="5182" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#5779#6179#0" expanded="true" />
-                <element signature="e#6168#6169#0" expanded="true" />
+                <element signature="e#4069#4220#0" expanded="true" />
+                <element signature="e#4209#4210#0" expanded="true" />
+                <element signature="method#disposeArgSearchtype#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="method#startRefresh#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="method#setLimitText#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="e#8998#9398#0" expanded="true" />
+                <element signature="e#9387#9388#0" expanded="true" />
+                <element signature="method#backButton#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="method#getLocation#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="method#onPreExecute#0;class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+                <element signature="class#CommonAdapter#0;class#ItemlActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/Constants.java">
+      <file leaf-file-name="SearchActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/SearchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="71" selection-start="388" selection-end="420" vertical-scroll-proportion="0.0">
+            <state line="106" column="75" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.6955645">
+              <folding>
+                <element signature="e#1111#1136#0" expanded="true" />
+                <element signature="e#2475#3315#0" expanded="true" />
+                <element signature="e#3304#3305#0" expanded="true" />
+                <element signature="method#getListLastIndex#0;class#SearchActivity#0" expanded="false" />
+                <element signature="method#addData#0;class#SearchActivity#0" expanded="false" />
+                <element signature="method#search#0;class#SearchActivity#0" expanded="false" />
+                <element signature="method#backView#0;class#SearchActivity#0" expanded="false" />
+                <element signature="class#MyAsynTask#0;class#SearchActivity#0" expanded="false" />
+                <element signature="e#6329#6354#0" expanded="true" />
+                <element signature="e#6934#6950#0" expanded="true" />
+                <element signature="e#7600#7625#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detailview.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/detailview.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="46" selection-start="4702" selection-end="4702" vertical-scroll-proportion="-1.4901961">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="map_pop_window.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/map_pop_window.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="19" selection-start="127" selection-end="151" vertical-scroll-proportion="0.076">
+            <state line="14" column="45" selection-start="702" selection-end="702" vertical-scroll-proportion="-5.2156863">
               <folding />
             </state>
           </provider>
@@ -206,12 +245,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/detai_mapview.xml" />
-        <option value="$PROJECT_DIR$/res/layout/item_listview.xml" />
-        <option value="$PROJECT_DIR$/res/layout/item_listview_row.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/searchNearby/util/Tools.java" />
-        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/ThirdActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/SecondActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/searchNearby/util/MyLocation.java" />
         <option value="$PROJECT_DIR$/src/com/example/searchNearby/util/MapApplication.java" />
@@ -219,14 +252,21 @@
         <option value="$PROJECT_DIR$/res/layout/item_mapview.xml" />
         <option value="$PROJECT_DIR$/src/com/example/searchNearby/Constants.java" />
         <option value="$PROJECT_DIR$/res/layout/search.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/SearchActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/itemlview.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/PoiLayout.java" />
+        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/MyLocationOverlay.java" />
+        <option value="$PROJECT_DIR$/res/layout/map_pop_window.xml" />
         <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/ItemlActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/loadmore.xml" />
+        <option value="$PROJECT_DIR$/res/layout/detailview.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/DetailActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/searchNearby/view/SearchActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -351,10 +391,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -387,6 +423,10 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -417,11 +457,11 @@
       <recent name="com.example.searchNearby.controlActive" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DemoPractice\searchNearby\res\drawable" />
+      <recent name="E:\DemoPractice\searchNearby\res\layout" />
+      <recent name="E:\DemoPractice\searchNearby\src\com\example\searchNearby\view" />
       <recent name="E:\DemoPractice\searchNearby\src\com\example\searchNearby\util" />
       <recent name="E:\DemoPractice\searchNearby\libs" />
-      <recent name="E:\DemoPractice\searchNearby\libs\armeabi" />
-      <recent name="E:\DemoPractice\searchNearby\res\drawable-mdpi" />
-      <recent name="E:\DemoPractice\searchNearby\res\layout" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.searchNearby" />
@@ -606,11 +646,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1382" height="744" extended-state="1" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22272727" sideWeight="0.89862543" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -620,22 +661,21 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41752577" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16666667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09450172" sideWeight="0.50691247" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25945017" sideWeight="0.50691247" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.90549827" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5979381" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.89862543" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.101374574" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5137457" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5137457" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22272727" sideWeight="0.6546392" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
@@ -707,58 +747,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="70" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="class#CommonAdapter#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/ItemlActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="62" selection-start="3533" selection-end="3533" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#5779#6179#0" expanded="true" />
-            <element signature="e#6168#6169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/ic_action_list.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/util/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="34" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.04418605">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/ThirdActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="36" selection-start="4184" selection-end="4184" vertical-scroll-proportion="0.53348213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/util/MyLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="43" selection-start="931" selection-end="931" vertical-scroll-proportion="1.1143695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/util/MapApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="628" selection-end="634" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="39" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="class#CommonAdapter#0;class#MainActivity#0" expanded="false" />
@@ -783,13 +771,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/itemlview.xml">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="44" selection-start="152" selection-end="152" vertical-scroll-proportion="0.076">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="71" selection-start="388" selection-end="420" vertical-scroll-proportion="0.2731006">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files (x86)/android-sdk-windows/platforms/android-10/android.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="158" selection-end="158" vertical-scroll-proportion="0.21064301">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/MyLocationOverlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="42" selection-start="363" selection-end="363" vertical-scroll-proportion="0.2703252">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/map_pop_window.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="39" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.41424802">
+        <state line="14" column="45" selection-start="702" selection-end="702" vertical-scroll-proportion="-5.2156863">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/ItemlActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="37" selection-start="5144" selection-end="5182" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#4069#4220#0" expanded="true" />
+            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="method#disposeArgSearchtype#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="method#startRefresh#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="method#setLimitText#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="e#8998#9398#0" expanded="true" />
+            <element signature="e#9387#9388#0" expanded="true" />
+            <element signature="method#backButton#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="method#getLocation#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="method#onPreExecute#0;class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#MyAsynTask#0;class#ItemlActivity#0" expanded="false" />
+            <element signature="class#CommonAdapter#0;class#ItemlActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -798,48 +836,73 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="33" selection-start="326" selection-end="326" vertical-scroll-proportion="0.050131924">
+        <state line="7" column="33" selection-start="326" selection-end="326" vertical-scroll-proportion="0.29820627">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/itemlview.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="72" selection-start="2882" selection-end="2882" vertical-scroll-proportion="0.44390243">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/radiobutton_bg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="8" selection-start="300" selection-end="300" vertical-scroll-proportion="0.20169851">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/detailview.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="46" selection-start="4702" selection-end="4702" vertical-scroll-proportion="-1.4901961">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/loadmore.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="48" selection-start="502" selection-end="502" vertical-scroll-proportion="0.4491726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/DetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="43" selection-start="789" selection-end="789" vertical-scroll-proportion="0.19556452">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="37" selection-start="3678" selection-end="3678" vertical-scroll-proportion="0.60232556">
+        <state line="106" column="75" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.6955645">
           <folding>
-            <element signature="e#1118#1143#0" expanded="true" />
-            <element signature="e#2039#2417#0" expanded="true" />
-            <element signature="e#2406#2407#0" expanded="true" />
-            <element signature="e#2984#3134#0" expanded="true" />
-            <element signature="e#3123#3124#0" expanded="true" />
-            <element signature="e#4871#4896#0" expanded="true" />
-            <element signature="e#5476#5492#0" expanded="true" />
-            <element signature="e#5937#5962#0" expanded="true" />
+            <element signature="e#1111#1136#0" expanded="true" />
+            <element signature="e#2475#3315#0" expanded="true" />
+            <element signature="e#3304#3305#0" expanded="true" />
+            <element signature="method#getListLastIndex#0;class#SearchActivity#0" expanded="false" />
+            <element signature="method#addData#0;class#SearchActivity#0" expanded="false" />
+            <element signature="method#search#0;class#SearchActivity#0" expanded="false" />
+            <element signature="method#backView#0;class#SearchActivity#0" expanded="false" />
+            <element signature="class#MyAsynTask#0;class#SearchActivity#0" expanded="false" />
+            <element signature="e#6329#6354#0" expanded="true" />
+            <element signature="e#6934#6950#0" expanded="true" />
+            <element signature="e#7600#7625#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/view/ItemlActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="79" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#5779#6179#0" expanded="true" />
-            <element signature="e#6168#6169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/searchNearby/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="71" selection-start="388" selection-end="420" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="127" selection-end="151" vertical-scroll-proportion="0.076">
-          <folding />
         </state>
       </provider>
     </entry>
